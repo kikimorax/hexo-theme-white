@@ -42,24 +42,25 @@ for (let mlink of mlinks) {
 }
 
 //设置收起的menu点击的效果
-var mmenu =document.getElementById("mobile-menu");
-var mmain=document.getElementById("mobile-main");
-var mclose=document.getElementById("mobile-close");
+let mmenu =document.getElementById("mobile-menu");
+let mmain=document.getElementById("mobile-main");
+let mclose=document.getElementById("mobile-close");
 
-mmenu.onclick=function(){
-  mmain.style.display="block";
+if (mmenu) {
+  mmenu.onclick=function(){
+    mmain.style.display="block";
+  }
 }
 mclose.onclick=function(){
   mmain.style.display="none";
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////
 
 //设置sort的子目录隐藏显示效果
 if(document.getElementById("sort")){
-var sort=document.getElementById("sort");
-var sortdiv=document.getElementById("sort-div");
+let sort=document.getElementById("sort");
+let sortdiv=document.getElementById("sort-div");
 
 sort.onmouseover=function(){
   sortdiv.style.display="block";
@@ -75,14 +76,14 @@ sortdiv.onmouseout=function(){
 }
 
 //图片懒加载
-var imgs = document.querySelectorAll('img');
-var imgdivs = document.querySelectorAll('.lazyload-img-span');
+let imgs = document.querySelectorAll('img');
+let imgdivs = document.querySelectorAll('.lazyload-img-span');
 
 
 //用来判断bound.top<=clientHeight的函数，返回一个bool值
 function isIn(el) {
-    var bound = el.getBoundingClientRect();
-    var clientHeight = window.innerHeight;
+    let bound = el.getBoundingClientRect();
+    let clientHeight = window.innerHeight;
     return bound.top <= clientHeight;
 } 
 //检查图片是否在可视区内，如果在，则加载
@@ -103,7 +104,7 @@ function changeClass(num){
 }
 function loadImg(el) {
     if(!el.src){
-        var source = el.dataset.src;
+        let source = el.dataset.src;
         el.src = source;
     }
 }

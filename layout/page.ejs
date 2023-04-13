@@ -3,8 +3,8 @@
   <div class="post-content-outer">
     <div class="post-intro">
       <div class="post-title animate__animated  animate__fadeInUp"><%=page.title%></div>
-      <div class="meta-intro animate__animated  animate__fadeInUp"><%=full_date(page.date,'MMM DD YYYY') %></div>
-      <%if(page.cover){%>
+      <div class="meta-intro animate__animated  animate__fadeInUp"><%=full_date(page.date, theme.style.date_format) %></div>
+      <%if(page.cover && page.cover_embed){%>
         <div class="post-cover"><span class="lazyload-img-span"><img data-src="<%=page.cover%>" class="post-cover-img"></span></div>
       <%}%>
     </div>

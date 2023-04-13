@@ -1,8 +1,10 @@
 <div class="footer-outer animate__animated  animate__fadeInUp">
     <div class="footer-inner">
-    <div class="footer-text">
-    <%- markdown(theme.footer) %>
-    </div>
+        <div class="footer-text">
+        <% if (theme.footer) { %>
+            <%- markdown(theme.footer) %>
+        <% } %>
+        </div>
     <div class="footer-contact">
     <ul class="footer-ul">
         <% for(var y in theme.contact){ %>
